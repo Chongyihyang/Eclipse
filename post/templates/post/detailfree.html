@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{post.title}}</title>
+    <style>
+    body{
+    margin: 0;
+    padding: 0;
+    background: #152733;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    h2{
+      padding-left: 20px;
+      color: white;
+
+    }
+    h4{
+      padding-left: 20px;
+      color: white;
+
+    }
+    h2{
+      text-align: center;
+      padding: 10px;
+    }
+    .slidershow{
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #152733;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    }
+    .middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+    .navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    }
+    .yes{
+    width: 500%;
+    height: auto ;
+    display: flex;
+    }
+    a{
+      padding-left: 20px;
+      padding-bottom: 10px;
+    }
+    form{
+      padding-left: 20px;
+    }
+    div.comments{
+      padding: 10px;
+      border:solid white 1px;
+      margin-left: 20px;
+      border-radius: 10px;
+      width: 400px;
+      color: white;
+    }
+    h4.main{
+      padding-left: 20px;
+    }
+    h5.coment{
+      padding-left: 20px;
+    }
+      </style>
+  </head>
+  <body>
+    <h2>{{post.title}} by u/{{uu}}</h2><br><br>
+  <div class="slidershow middle">
+  <div class='yes'>
+  </div>
+    <h4>{{post.description}}</h4>
+    <a href="/">BACK</a>
+    {%if usercorrect is not None%}
+      <a href="/edit/{{post.id}}"> EDIT</a>
+      <a href="/delete/{{post.id}}"> DELETE</a>
+    {% endif %}
+    <br><br>
+    {% if user.is_authenticated %}
+    <form method="POST">
+      <textarea class='comment' name="comment" id="" cols="30" rows="10" placeholder="Your comments" ></textarea>
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment" ></p>
+    </form>
+    {% endif %}
+    <h4>COMMENTS</h4>
+    {% for i in comments %}
+      <div class='comments'>
+        <h4 class='main'>u/{{i.user}}--{{i.created_time_comments}}</h4>
+        <h5 class="coment">{{i.comment}}</h5>
+      </div>
+      <br>
+    {% endfor %}
+  </body>
+</html>
