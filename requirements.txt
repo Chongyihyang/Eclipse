@@ -24,6 +24,7 @@ certifi==2018.1.18
 cffi==1.14.5
 chardet==3.0.4
 charset-normalizer==2.0.8
+cython==0.29.25
 click==7.1.2
 cmake==3.17.2
 coderunner==1.0
