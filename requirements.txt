@@ -37,7 +37,6 @@ curve==0.0.7
 cx-Freeze==6.6
 cx-Logging==3.0
 cycler==0.10.0
-Cython==0.29.3
 dataclasses==0.8
 dateparser==1.0.0
 debtcollector==2.2.0
