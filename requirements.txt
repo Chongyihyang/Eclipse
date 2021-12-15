@@ -38,7 +38,7 @@ curve==0.0.7
 cx-Freeze==6.6
 cx-Logging==3.0
 cycler==0.10.0
-dataclasses==0.8
+dataclasses==0.6
 dateparser==1.0.0
 debtcollector==2.2.0
 decorator==4.4.2
