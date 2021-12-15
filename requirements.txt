@@ -37,7 +37,7 @@ curve==0.0.7
 cx-Freeze==6.6
 cx-Logging==3.0
 cycler==0.10.0
-Cython==0.29.23
+Cython==0.29.3
 git+git://github.com/ericvsmith/dataclasses@0.6#dataclasses
 dataclasses==0.8
 dateparser==1.0.0
