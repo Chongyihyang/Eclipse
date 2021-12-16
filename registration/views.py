@@ -13,7 +13,7 @@ def register(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, "Account is created")
-                return redirect('/login')
+                return redirect('/login/')
         context = {
             'form':form
         }
