@@ -56,7 +56,7 @@ def detail(request,pk):
     else:
         usercorrect = None
     print(f"usercore:{usercorrect}")
-    print(BASE_DIR)
+    print(f"BASE_DIR:{BASE_DIR}")
     commenta = None
     img = []
     vid = []
