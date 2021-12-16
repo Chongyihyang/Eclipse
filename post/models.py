@@ -9,7 +9,7 @@ class Post(models.Model):
 
 class Image(models.Model):
     post=models.ForeignKey(Post,models.CASCADE,null=True,blank=True)
-    image=models.ImageField(verbose_name="image",upload_to="media",null=True,blank=True)
+    image=models.ImageField(verbose_name="image",upload_to="media/",null=True,blank=True)
 
 class Video(models.Model):
     post=models.ForeignKey(Post,models.CASCADE,null=True,blank=True)
