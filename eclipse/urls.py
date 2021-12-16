@@ -17,6 +17,6 @@ urlpatterns = [
     path('logout', logoutPage),
     path('edit/<str:pk>', editpage),
     path('delete/<str:pk>', delete),
-    path('del/<str:id>', deletecomment)
+    path('del/<str:id>', deletecomment),
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ]
