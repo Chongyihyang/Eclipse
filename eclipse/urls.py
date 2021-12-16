@@ -18,5 +18,7 @@ urlpatterns = [
     path('edit/<str:pk>', editpage),
     path('delete/<str:pk>', delete),
     path('del/<str:id>', deletecomment),
-    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ]
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
