@@ -1,5 +1,7 @@
 from django.shortcuts import *
 from.models import *
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def home(request):
     print(str(request.user))
@@ -54,6 +56,7 @@ def detail(request,pk):
     else:
         usercorrect = None
     print(f"usercore:{usercorrect}")
+    print(BASE_DIR)
     commenta = None
     img = []
     vid = []
