@@ -24,18 +24,9 @@ def addPost(request):
                 return render(request, 'post/addPost.html') 
             form_obj=Post.objects.create(title=title,description=description,user=request.user)
             for images in images:
-                file=open(str(images),'rb')
-                data=file.read()
-                file.close()
-                url = secrets.token_urlsafe()+'.jpg'
-                image_file_name = BASE_DIR/'media'/url
-                file=open(image_file_name,'wb')
-                file.write(data)
-                fie.close()
-                i=Image(post=form_obj,image=str(image_file_name))
-                i.save()
+                pass
             for videos in videos:
-                Video.objects.create(post=form_obj,video=videos)
+                pass
             return redirect("/")
         else:
             return render(request, 'post/addPost.html')
