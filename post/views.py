@@ -1,7 +1,7 @@
 from django.shortcuts import *
 from.models import *
 import secrets
-from PIL import IMage as img
+from PIL import Image as img
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
