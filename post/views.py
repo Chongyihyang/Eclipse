@@ -22,7 +22,8 @@ def addPost(request):
                 return render(request, 'post/addPost.html') 
             form_obj=Post.objects.create(title=title,description=description,user=request.user)
             for images in images:
-                Image.objects.create(post=form_obj,image=images)
+                i=Image(post=form_obj,image=images)
+                i.save()
             for videos in videos:
                 Video.objects.create(post=form_obj,video=videos)
             return redirect("/")
