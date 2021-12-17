@@ -24,10 +24,14 @@ def addPost(request):
                 return render(request, 'post/addPost.html') 
             form_obj=Post.objects.create(title=title,description=description,user=request.user)
             for images in images:
+                file=open(images,'rb')
+                data=file.read()
+                file.close()
                 url = secrets.token_urlsafe()+'.jpg'
                 image_file_name = BASE_DIR/'media'/url
-                im1=img.open(images)
-                im1=im1.save(image_file_name)
+                file=open(image_file_name,'wb')
+                file.write(data)
+                fie.close()
                 i=Image(post=form_obj,image=str(image_file_name))
                 i.save()
             for videos in videos:
