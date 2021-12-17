@@ -1,5 +1,7 @@
 from django.shortcuts import *
 from.models import *
+import secrets
+from PIL import IMage as img
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,7 +24,11 @@ def addPost(request):
                 return render(request, 'post/addPost.html') 
             form_obj=Post.objects.create(title=title,description=description,user=request.user)
             for images in images:
-                i=Image(post=form_obj,image=images)
+                url = secrets.token_urlsafe()+'.jpg'
+                image_file_name = BASE_DIR/'media'/url
+                im1=img.open(images)
+                im1=im1.save(image_file_name)
+                i=Image(post=form_obj,image=str(image_file_name))
                 i.save()
             for videos in videos:
                 Video.objects.create(post=form_obj,video=videos)
