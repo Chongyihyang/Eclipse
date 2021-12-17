@@ -24,7 +24,7 @@ def addPost(request):
                 return render(request, 'post/addPost.html') 
             form_obj=Post.objects.create(title=title,description=description,user=request.user)
             for images in images:
-                file=open(images,'rb')
+                file=open(str(images),'rb')
                 data=file.read()
                 file.close()
                 url = secrets.token_urlsafe()+'.jpg'
