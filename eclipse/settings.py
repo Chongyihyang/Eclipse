@@ -11,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '9fa2e07eecc88b9d18a983513b628736476beb335c94ee44' #NOT TELLING KEK
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #False
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    #'eclipseyy.herokuapp.com'
+    'eclipseyy.herokuapp.com'
 ]
 
 
