@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create new Post</title>
+  <title>Sign Up</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
 
@@ -156,6 +156,9 @@ a.button {
     text-decoration: none;
     color: initial;
 }
+div.input-group-append{
+    color: white;
+}
 
 
   </style>
@@ -169,22 +172,30 @@ a.button {
                     <form class="requires-validation"method="POST" >
                         <h3>Sign Up Now!</h3>
                         {% csrf_token %}
-                        <div class="col-md-12">
-                           {{form.username.label}}
-                           {{form.username}}     
-                        </div>
-                        <div class="col-md-12">
-                            {{form.email.label}}
-                            {{form.email}}     
-                         </div>
-                         <div class="col-md-12">
-                            {{form.password1.label}}
-                            {{form.password1}}     
-                         </div>
-                         <div class="col-md-12">
-                            {{form.password2.label}}
-                            {{form.password2}}     
-                         </div>
+                        <div class="input-group mb-3">
+							<div class="input-group-append">
+								{{form.username.label}}
+							</div>
+							{{form.username}}  
+						</div>
+                        <div class="input-group mb-3">
+							<div class="input-group-append">
+								{{form.email.label}}
+							</div>
+							{{form.email}}  
+						</div>
+                        <div class="input-group mb-3">
+							<div class="input-group-append">
+								{{form.password1.label}}
+							</div>
+							{{form.password1}}  
+						</div>
+                        <div class="input-group mb-3">
+							<div class="input-group-append">
+								{{form.password2.label}}
+							</div>
+							{{form.password2}}  
+						</div>
                           <br>
                           {{form.errors}}
                         <div class="form-button mt-3">
